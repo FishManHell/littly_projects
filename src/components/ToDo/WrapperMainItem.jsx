@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {favoriteSolid, removeSolid} from "../../utils/Font_Awesome/Solid";
+import {favoriteRegular, removeRegular} from "../../utils/Font_Awesome/Regular";
 
 const headerImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg'
 
@@ -6,6 +8,7 @@ const WrapperMainItem = () => {
     const refToDo = useRef(null);
     const [arrayItems, setArrayItems] = useState([]);
     const [favorites, setFavorites] = useState([]);
+    const [checkButton, setCheckButton] = useState(true);
 
     useEffect(() => {
         if (localStorage.getItem('favorites')) {
@@ -41,6 +44,7 @@ const WrapperMainItem = () => {
             setFavorites(array)
             localStorage.setItem('favorites', JSON.stringify(array))
         }
+        setCheckButton(false)
     }
 
 
@@ -53,22 +57,25 @@ const WrapperMainItem = () => {
                     </div>
                     <h1 className={'header__title'}>ToDo List</h1>
                 </header>
-                <section>
-                        <div>
-                            <label>Text</label>
-                            <input type="text" ref={refToDo}/>
+                <section className={'sectionToDo'}>
+                    <div className={'sectionToDo__wrapperInputField'}>
+                        <label className={'sectionToDo__inputLabel'}>Add some item</label>
+                        <div className={'sectionToDo__inputTodo'}>
+                            <input type="text" ref={refToDo} className={'sectionToDo__inout'}/>
+                            <div className={'sectionToDo__buttonToDo'}>
+                                <button onClick={() => handleAddItem(refToDo)}>
+                                    <span>Add</span>
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                            <button onClick={() => handleAddItem(refToDo)}>Add</button>
-                        </div>
-                    <div>
+                    </div>
+                    <div className={'sectionToDo__wrapperItems'}>
                         {arrayItems?.map((text, index) => {
                             return (
-                                <div>
-                                    <span key={'text'}>{text}</span>
-                                    <button onClick={() => handleRemoveItem(arrayItems, index, setArrayItems)}>remove
-                                    </button>
-                                    <button onClick={() => handleAddToFavorites(text)}>add to fav</button>
+                                <div className={'sectionToDo__blockItem'}>
+                                    <span key={'text'} className={'sectionToDo__itemText'}>{text}</span>
+                                    <button className={'sectionToDo__buttonItem remove'} onClick={() => handleRemoveItem(arrayItems, index, setArrayItems)}>{removeSolid}</button>
+                                    <button className={'sectionToDo__buttonItem favorites'} onClick={() => handleAddToFavorites(text)}>{checkButton ? favoriteRegular : favoriteSolid}</button>
                                 </div>
                             )
                         })}

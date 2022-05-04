@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+input {
+  background-color: transparent;
+  padding: 0.7rem;
+  border-bottom-right-radius: 15px 3px;
+  border-bottom-left-radius: 3px 15px;
+  border: dashed 3px transparent;
+  border-bottom: dashed 4px #ffc400;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1rem;
+  color: rgba(63, 62, 65, 0.7);
+  width: 100%;
+  max-width: 100%;
+  margin-right: 20px;
+}
+input:focus {
+  outline: none;
+  border-color: #ffc400;
+}
+
 .containerToDo {
   width: 100%;
   max-width: 100%;
@@ -33,13 +52,72 @@
   transform: rotate(2deg);
   padding: 0.2rem 1.2rem;
   border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-  background-color: rgba(0, 255, 196, 0.7);
+  background-color: #ffc400;
+  margin-left: 10px;
 }
 .header__image {
   width: 24%;
 }
 .header__image > img {
   width: 100%;
+}
+
+.sectionToDo__wrapperInputField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sectionToDo__inputTodo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.sectionToDo__buttonToDo {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: #3498db;
+  color: #000;
+  box-shadow: 0 0 40px 40px #ffc400 inset, 0 0 0 0 #ffc400;
+  transition: all 150ms ease-in-out;
+}
+.sectionToDo__buttonToDo:hover {
+  box-shadow: 0 0 10px 0 #ffc400 inset, 0 0 10px 4px #ffc400;
+}
+.sectionToDo__buttonToDo > button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  text-align: center;
+}
+.sectionToDo__buttonToDo > button:hover {
+  cursor: pointer;
+}
+.sectionToDo__inputLabel {
+  font-size: 1.5rem;
+}
+.sectionToDo__wrapperItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sectionToDo__blockItem {
+  width: 90%;
+  margin: 0 auto;
+  border: 3px dashed #ffc400;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionToDo__itemText {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 * {
