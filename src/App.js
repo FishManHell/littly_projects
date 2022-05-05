@@ -1,10 +1,10 @@
 import React from 'react';
-import WrapperMainItem from "./components/ToDo/DefaultPage/WrapperMainItem";
+import WrapperToDo from "./components/ToDo/WrapperToDo";
 
 const App = () => {
     return (
         <div className={'mainWrapper'}>
-          <WrapperMainItem/>
+            <WrapperToDo/>
         </div>
     );
 };

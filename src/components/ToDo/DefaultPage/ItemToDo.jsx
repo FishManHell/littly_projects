@@ -3,10 +3,10 @@ import {favoriteSolid, Pen, removeSolid} from "../../../utils/Font_Awesome/Solid
 import {favoriteRegular} from "../../../utils/Font_Awesome/Regular";
 
 
-const ItemToDo = ({text, remove, add, id}) => {
+const ItemToDo = ({text, remove, addFavorite, id}) => {
     const [checkButton, setCheckButton] = useState(true);
     function addToFavorites() {
-        add(id)
+        addFavorite(text, id)
         setCheckButton(false)
     }
 
