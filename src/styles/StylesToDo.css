@@ -1,25 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
-.messageError {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #FF4040;
-}
-
-.favoritesButton {
-  width: 100%;
-  text-align: right;
-}
-.favoritesButton button {
+input {
   background-color: transparent;
-  border: none;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  cursor: pointer;
+  padding: 0.7rem;
+  border-bottom-right-radius: 15px 3px;
+  border-bottom-left-radius: 3px 15px;
+  border: dashed 3px transparent;
+  border-bottom: dashed 4px #ffc400;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1rem;
+  color: rgba(63, 62, 65, 0.7);
+  width: 100%;
+  max-width: 100%;
+  margin-right: 20px;
 }
-.favoritesButton button:hover {
-  transform: scale(1.4);
-  color: #ffc400;
-  transition: all 0.4s;
+input:focus {
+  outline: none;
+  border-color: #ffc400;
 }
 
 .containerToDo {
@@ -78,27 +73,6 @@
   justify-content: center;
   margin-bottom: 20px;
 }
-.sectionToDo__input {
-  background-color: transparent;
-  padding: 0.7rem;
-  border-bottom-right-radius: 15px 3px;
-  border-bottom-left-radius: 3px 15px;
-  border: dashed 3px transparent;
-  border-bottom: dashed 4px #ffc400;
-  font-family: "Gochi Hand", cursive;
-  font-size: 1rem;
-  color: rgba(63, 62, 65, 0.7);
-  width: 100%;
-  max-width: 100%;
-  margin-right: 20px;
-}
-.sectionToDo__input:focus {
-  outline: none;
-  border-color: #ffc400;
-}
-.sectionToDo__blockInput {
-  border-bottom: dashed 4px #808080;
-}
 .sectionToDo__buttonToDo {
   width: 100px;
   height: 50px;
@@ -110,16 +84,6 @@
 }
 .sectionToDo__buttonToDo:hover {
   box-shadow: 0 0 10px 0 #ffc400 inset, 0 0 10px 4px #ffc400;
-}
-.sectionToDo__blockButtonToDo {
-  box-shadow: 0 0 40px 40px #808080 inset, 0 0 0 0 #808080;
-}
-.sectionToDo__blockButtonToDo:hover {
-  box-shadow: 0 0 40px 40px #808080 inset, 0 0 0 0 #808080;
-  color: #fff;
-}
-.sectionToDo__blockButtonToDo > button > span {
-  color: #fff;
 }
 .sectionToDo__buttonToDo > button {
   width: 100%;
@@ -141,7 +105,7 @@
 }
 .sectionToDo__blockItem {
   width: 90%;
-  margin: 0 auto 20px auto;
+  margin: 0 auto;
   border: 3px dashed #ffc400;
   padding: 5px;
   display: flex;
@@ -153,10 +117,6 @@
   font-size: 1.2rem;
   font-weight: 400;
   text-align: center;
-  list-style: none;
-}
-.sectionToDo__wrapper_buttonItem {
-  display: flex;
 }
 .sectionToDo__buttonItem {
   background-color: transparent;
@@ -165,36 +125,7 @@
   margin: 0 5px;
   font-size: 1.1rem;
   border: none;
-  color: #310EA3;
-}
-.sectionToDo__buttonItem:hover {
-  transform: scale(1.3);
-  transition: all 0.4s;
-  cursor: pointer;
+  color: #ffc400;
 }
 
-.footerToDo {
-  width: 100%;
-  text-align: center;
-  margin: 10px 0;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  box-sizing: border-box;
-  font-family: "Koulen", cursive;
-}
-
-html, body {
-  width: 100%;
-}
-
-.mainWrapper {
-  width: 100%;
-  background-color: #a39bd2;
-  height: 100vh;
-}
-
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=StylesToDo.css.map */

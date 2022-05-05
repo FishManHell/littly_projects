@@ -1,5 +1,5 @@
 import React from 'react';
-import WrapperMainItem from "./components/ToDo/WrapperMainItem";
+import WrapperMainItem from "./components/ToDo/DefaultPage/WrapperMainItem";
 
 const App = () => {
     return (
