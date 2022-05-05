@@ -46,8 +46,8 @@ const WrapperToDo = () => {
     }
 
     const handleAddToFavorites = (text, id) => {
-        const array = [...favorites]
-        const item = array.every(elem => elem.id !== id)
+        const array = [...favorites],
+            item = array.every(elem => elem.id !== id && elem.text !== text)
         if (item) {
             array.push({id, text})
             setFavorites(array)
@@ -69,10 +69,15 @@ const WrapperToDo = () => {
     })
 
     return (
-        <Routes>
-            <Route path={'/'} element={<WrapperMainItem {...funcPutProps()}/>}/>
-            <Route path={'/favorites'} element={<WrapperFavorites/>}/>
-        </Routes>
+        <div className={'containerToDo'}>
+            <div className={'wrapperToDo'}>
+                <Routes>
+                    <Route path={'/'} element={<WrapperMainItem {...funcPutProps()}/>}/>
+                    <Route path={'/favorites'} element={<WrapperFavorites/>}/>
+                </Routes>
+            </div>
+        </div>
+
     );
 };
 
