@@ -1,0 +1,1 @@
+export const headerImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg'

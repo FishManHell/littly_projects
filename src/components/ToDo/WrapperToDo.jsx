@@ -1,10 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, useNavigate, useLocation} from "react-router-dom";
 import WrapperMainItem from "./DefaultPage/WrapperMainItem";
 import WrapperFavorites from "./Favorites/WrapperFavorites";
 import {v4 as uuidv4} from "uuid";
+import HeaderToDo from "./DefaultPage/HeaderToDo";
+import {headerImage} from "../../utils/images";
+import LinkToPage from "../LinkToPage";
+import {Heart, House} from "../../utils/Font_Awesome/Regular";
 
 const WrapperToDo = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [arrayItems, setArrayItems] = useState([]);
     const [favorites, setFavorites] = useState([]);
     const [checkArrayItems, setCheckArrayItems] = useState(true);
@@ -57,6 +63,19 @@ const WrapperToDo = () => {
 
     const changeStyle = (value) => !checkArrayItems ? value : ''
 
+    const switchLinkIconText = (value) => {
+        const pathName = location.pathname
+        switch (value) {
+            case 'link':
+                return  pathName === '/' ? navigate('/favorites') : navigate('/')
+            case 'icon':
+                return pathName === '/' ? Heart : House
+            case 'text':
+                return pathName === '/' ? 'ToDo List' : 'Favorites'
+            default:
+                return -1
+        }
+    }
 
     const funcPutProps = () => ({
         add: handleAddItem,
@@ -71,6 +90,8 @@ const WrapperToDo = () => {
     return (
         <div className={'containerToDo'}>
             <div className={'wrapperToDo'}>
+                <LinkToPage linkPage={switchLinkIconText} icon={switchLinkIconText}/>
+                <HeaderToDo image={headerImage} text={switchLinkIconText}/>
                 <Routes>
                     <Route path={'/'} element={<WrapperMainItem {...funcPutProps()}/>}/>
                     <Route path={'/favorites'} element={<WrapperFavorites/>}/>
