@@ -7,6 +7,7 @@ import HeaderToDo from "./DefaultPage/HeaderToDo";
 import {headerImage} from "../../utils/images";
 import LinkToPage from "../LinkToPage";
 import {Heart, House} from "../../utils/Font_Awesome/Regular";
+import FooterToDo from "./DefaultPage/FooterToDo";
 
 const WrapperToDo = () => {
     const navigate = useNavigate();
@@ -94,8 +95,13 @@ const WrapperToDo = () => {
                 <HeaderToDo image={headerImage} text={switchLinkIconText}/>
                 <Routes>
                     <Route path={'/'} element={<WrapperMainItem {...funcPutProps()}/>}/>
-                    <Route path={'/favorites'} element={<WrapperFavorites/>}/>
+                    <Route path={'/favorites'} element={<WrapperFavorites
+                        favorites={favorites}
+                        setFavorites={setFavorites}
+                        remove={handleRemoveItem}
+                    />}/>
                 </Routes>
+                <FooterToDo text={"Please don't forget subscribe:_)"}/>
             </div>
         </div>
 

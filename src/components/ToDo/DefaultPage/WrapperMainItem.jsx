@@ -1,12 +1,9 @@
 import React from 'react';
 import ItemToDo from "./ItemToDo";
 import InputComponent from "./InputComponent";
-import FooterToDo from "./FooterToDo";
 import MessageErrorComponent from "./MessageErrorComponent";
 
 const WrapperMainItem = ({add, changeStyle, checkArrayItems, arrayItems, addFavorite, handleRemoveItem, setArrayItems}) => {
-
-
     return (
         <>
             <section className={'sectionToDo'}>
@@ -19,7 +16,6 @@ const WrapperMainItem = ({add, changeStyle, checkArrayItems, arrayItems, addFavo
                 </div>
             </section>
             <MessageErrorComponent error={"You can add just 5 items"} check={arrayItems.length >= 5}/>
-            <FooterToDo text={"Please don't forget subscribe:_)"}/>
         </>
     )
 };
